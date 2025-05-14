@@ -1,8 +1,8 @@
-
-<link rel="stylesheet" href="https://www.nerdfonts.com/assets/css/webfont.css">
 <div align="center">
 
-# <i class="nf nf-md-language_javascript"></i> Leet.js
+<img src="https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/javascript.svg" alt="JavaScript" width="48" />
+
+# Leet.js
 
 Solving LeetCode problems with modern JavaScript.
 
@@ -11,6 +11,8 @@ Solving LeetCode problems with modern JavaScript.
 ![Last Updated](https://img.shields.io/badge/Last__Update-2025__05__14-brightgreen?style=flat-square)
 
 </div>
+
+<link rel="stylesheet" href="https://www.nerdfonts.com/assets/css/webfont.css">
 
 <link rel="stylesheet" href="https://www.nerdfonts.com/assets/css/webfont.css">
 

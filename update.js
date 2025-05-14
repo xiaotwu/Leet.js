@@ -76,9 +76,8 @@ function generateProgressBar(percent, length = 24) {
 }
 
 function ensureHeaderBlock(readme, totalSolved, date) {
-  const nerdFontStyle = `\n<link rel=\"stylesheet\" href=\"https://www.nerdfonts.com/assets/css/webfont.css\">`;
   const encodedDate = encodeURIComponent(date.replace(/-/g, "__"));
-  const titleBlock = `<div align=\"center\">\n\n# <i class=\"nf nf-md-language_javascript\"></i> Leet.js\n\nSolving LeetCode problems with modern JavaScript.\n\n` +
+  const titleBlock = `<div align=\"center\">\n\n<img src=\"https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/javascript.svg\" alt=\"JavaScript\" width=\"48\" />\n\n# Leet.js\n\nSolving LeetCode problems with modern JavaScript.\n\n` +
     `![Language](https://img.shields.io/badge/Language-JavaScript-yellow?logo=javascript)\n` +
     `![Solved](https://img.shields.io/badge/Solved-${totalSolved}-blue?logo=leetcode)\n` +
     `![Last Updated](https://img.shields.io/badge/Last__Update-${encodedDate}-brightgreen?style=flat-square)\n\n</div>\n`;
@@ -88,7 +87,7 @@ function ensureHeaderBlock(readme, totalSolved, date) {
   readme = readme.replace(blockRegex, "");
   readme = readme.replace(markdownRegex, "");
 
-  return nerdFontStyle + "\n" + titleBlock + "\n" + readme.trimStart();
+  return titleBlock + "\n" + readme.trimStart();
 }
 
 function updateReadme(readmePath, problems) {
