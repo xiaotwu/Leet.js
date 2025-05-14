@@ -25,12 +25,6 @@ const DIFFICULTY_ICONS = {
   Hard: "📕",
 };
 
-const DIFFICULTY_COLORS = {
-  Easy: "#2ecc71",    // green
-  Medium: "#f1c40f",  // yellow
-  Hard: "#e74c3c",    // red
-};
-
 function cleanHeader(filePath) {
   let content = fs.readFileSync(filePath, "utf-8");
   const titleMatch = content.match(/\[\d+\]\s+.+/);
@@ -121,15 +115,16 @@ function updateReadme(readmePath, problems) {
     readme = readme.replace(new RegExp(`<!-- ${difficulty.toUpperCase()}_TOTAL_BADGE -->.*?<!-- \/${difficulty.toUpperCase()}_TOTAL_BADGE -->`), `<!-- ${difficulty.toUpperCase()}_TOTAL_BADGE -->${count}<!-- /${difficulty.toUpperCase()}_TOTAL_BADGE -->`);
   }
 
-  // Mermaid pie chart with colors
+  // Mermaid bar chart instead of pie chart
   const mermaidBlock = [
     "## 📊 Solved Problems Distribution",
     "",
     "```mermaid",
-    "pie title Problems Solved by Difficulty",
-    `    \"Easy\" : ${counts.Easy}`,
-    `    \"Medium\" : ${counts.Medium}`,
-    `    \"Hard\" : ${counts.Hard}`,
+    "barChart",
+    "    title Solved Problems by Difficulty",
+    `    x-axis Easy Medium Hard`,
+    `    y-axis 0 ${TOTAL_PROBLEMS}`,
+    `    series Solved ${counts.Easy} ${counts.Medium} ${counts.Hard}`,
     "```"
   ].join("\n");
 

@@ -47,8 +47,9 @@ Solving LeetCode problems with modern JavaScript.
 ## 📊 Solved Problems Distribution
 
 ```mermaid
-pie title Problems Solved by Difficulty
-    "Easy" : 4
-    "Medium" : 0
-    "Hard" : 0
+barChart
+    title Solved Problems by Difficulty
+    x-axis Easy Medium Hard
+    y-axis 0 3549
+    series Solved 4 0 0
 ```
