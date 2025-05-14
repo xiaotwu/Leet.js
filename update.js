@@ -121,7 +121,6 @@ function updateReadme(readmePath, problems) {
     readme = readme.replace(new RegExp(`<!-- ${difficulty.toUpperCase()}_TOTAL_BADGE -->.*?<!-- \/${difficulty.toUpperCase()}_TOTAL_BADGE -->`), `<!-- ${difficulty.toUpperCase()}_TOTAL_BADGE -->${count}<!-- /${difficulty.toUpperCase()}_TOTAL_BADGE -->`);
   }
 
-  // Mermaid pie chart with colors
   const mermaidBlock = [
     "## 📊 Solved Problems Distribution",
     "",
