@@ -77,7 +77,7 @@ function generateProgressBar(percent, length = 24) {
 
 function ensureHeaderBlock(readme, totalSolved, date) {
   const encodedDate = encodeURIComponent(date.replace(/-/g, "__"));
-  const titleBlock = `<div align=\"center\">\n\n<h1><img src=\"https://cdn4.iconfinder.com/data/icons/logos-brands-5/24/js_logo-512.png\" alt=\"JavaScript\" width=\"32\" style=\"vertical-align: middle; margin-right: 8px;\"/>Leet.js</h1>\n\nSolving LeetCode problems with modern JavaScript.\n\n` +
+  const titleBlock = `<div align=\"center\">\n\n<h1 style=\"display: flex; align-items: center; justify-content: center; gap: 12px;\">\n  <img src=\"https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png\" alt=\"JavaScript\" width=\"40\" height=\"40\"/>\n  <span>Leet.js</span>\n</h1>\n\nSolving LeetCode problems with modern JavaScript.\n\n` +
     `![Language](https://img.shields.io/badge/Language-JavaScript-yellow?logo=javascript)\n` +
     `![Solved](https://img.shields.io/badge/Solved-${totalSolved}-blue?logo=leetcode)\n` +
     `![Last Updated](https://img.shields.io/badge/Last__Update-${encodedDate}-brightgreen?style=flat-square)\n\n</div>\n`;
@@ -115,7 +115,19 @@ function updateReadme(readmePath, problems) {
     readme = readme.replace(new RegExp(`<!-- ${difficulty.toUpperCase()}_TOTAL_BADGE -->.*?<!-- \/${difficulty.toUpperCase()}_TOTAL_BADGE -->`), `<!-- ${difficulty.toUpperCase()}_TOTAL_BADGE -->${count}<!-- /${difficulty.toUpperCase()}_TOTAL_BADGE -->`);
   }
 
-  readme = readme.replace(/<!-- PIE_CHART_DATA_START -->[\s\S]*?<!-- PIE_CHART_DATA_END -->/, `<!-- PIE_CHART_DATA_START -->\n    "Easy" : ${counts.Easy}\n    "Medium" : ${counts.Medium}\n    "Hard" : ${counts.Hard}\n    <!-- PIE_CHART_DATA_END -->`);
+  const pieChart = [
+    "```mermaid",
+    "pie title Problems Solved by Difficulty",
+    `    \"Easy\" : ${counts.Easy}`,
+    `    \"Medium\" : ${counts.Medium}`,
+    `    \"Hard\" : ${counts.Hard}`,
+    "```"
+  ].join("\n");
+
+  readme = readme.replace(
+    /<!-- PIE_CHART_DATA_START -->[\s\S]*?<!-- PIE_CHART_DATA_END -->/,
+    `<!-- PIE_CHART_DATA_START -->\n${pieChart}\n<!-- PIE_CHART_DATA_END -->`
+  );
 
   fs.writeFileSync(readmePath, readme, "utf-8");
 }

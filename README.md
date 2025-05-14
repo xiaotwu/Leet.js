@@ -1,6 +1,9 @@
 <div align="center">
 
-<h1><img src="https://cdn4.iconfinder.com/data/icons/logos-brands-5/24/js_logo-512.png" alt="JavaScript" width="32" style="vertical-align: middle; margin-right: 8px;"/>Leet.js</h1>
+<h1 style="display: flex; align-items: center; justify-content: center; gap: 12px;">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript" width="40" height="40"/>
+  <span>Leet.js</span>
+</h1>
 
 Solving LeetCode problems with modern JavaScript.
 
@@ -46,7 +49,10 @@ Solving LeetCode problems with modern JavaScript.
 ```mermaid
 pie title Problems Solved by Difficulty
     <!-- PIE_CHART_DATA_START -->
+```mermaid
+pie title Problems Solved by Difficulty
     "Easy" : 4
     "Medium" : 0
     "Hard" : 0
-    <!-- PIE_CHART_DATA_END -->
+```
+<!-- PIE_CHART_DATA_END -->
