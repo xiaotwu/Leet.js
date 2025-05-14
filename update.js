@@ -115,7 +115,10 @@ function updateReadme(readmePath, problems) {
     readme = readme.replace(new RegExp(`<!-- ${difficulty.toUpperCase()}_TOTAL_BADGE -->.*?<!-- \/${difficulty.toUpperCase()}_TOTAL_BADGE -->`), `<!-- ${difficulty.toUpperCase()}_TOTAL_BADGE -->${count}<!-- /${difficulty.toUpperCase()}_TOTAL_BADGE -->`);
   }
 
-  const pieChart = [
+  // Replace full chart section directly
+  const mermaidBlock = [
+    "## 📊 Solved Problems Distribution",
+    "",
     "```mermaid",
     "pie title Problems Solved by Difficulty",
     `    \"Easy\" : ${counts.Easy}`,
@@ -125,8 +128,8 @@ function updateReadme(readmePath, problems) {
   ].join("\n");
 
   readme = readme.replace(
-    /<!-- PIE_CHART_DATA_START -->[\s\S]*?<!-- PIE_CHART_DATA_END -->/,
-    `<!-- PIE_CHART_DATA_START -->\n${pieChart}\n<!-- PIE_CHART_DATA_END -->`
+    /## 📊 Solved Problems Distribution[\s\S]*?(?=## |$)/,
+    mermaidBlock + "\n"
   );
 
   fs.writeFileSync(readmePath, readme, "utf-8");

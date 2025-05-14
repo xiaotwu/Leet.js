@@ -48,11 +48,7 @@ Solving LeetCode problems with modern JavaScript.
 
 ```mermaid
 pie title Problems Solved by Difficulty
-    <!-- PIE_CHART_DATA_START -->
-```mermaid
-pie title Problems Solved by Difficulty
     "Easy" : 4
     "Medium" : 0
     "Hard" : 0
 ```
-<!-- PIE_CHART_DATA_END -->
