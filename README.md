@@ -1,8 +1,6 @@
 <div align="center">
 
-<img src="https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/javascript.svg" alt="JavaScript" width="48" />
-
-# Leet.js
+<h1><img src="https://cdn4.iconfinder.com/data/icons/logos-brands-5/24/js_logo-512.png" alt="JavaScript" width="32" style="vertical-align: middle; margin-right: 8px;"/>Leet.js</h1>
 
 Solving LeetCode problems with modern JavaScript.
 

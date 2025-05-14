@@ -77,7 +77,7 @@ function generateProgressBar(percent, length = 24) {
 
 function ensureHeaderBlock(readme, totalSolved, date) {
   const encodedDate = encodeURIComponent(date.replace(/-/g, "__"));
-  const titleBlock = `<div align=\"center\">\n\n<img src=\"https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/javascript.svg\" alt=\"JavaScript\" width=\"48\" />\n\n# Leet.js\n\nSolving LeetCode problems with modern JavaScript.\n\n` +
+  const titleBlock = `<div align=\"center\">\n\n<h1><img src=\"https://cdn4.iconfinder.com/data/icons/logos-brands-5/24/js_logo-512.png\" alt=\"JavaScript\" width=\"32\" style=\"vertical-align: middle; margin-right: 8px;\"/>Leet.js</h1>\n\nSolving LeetCode problems with modern JavaScript.\n\n` +
     `![Language](https://img.shields.io/badge/Language-JavaScript-yellow?logo=javascript)\n` +
     `![Solved](https://img.shields.io/badge/Solved-${totalSolved}-blue?logo=leetcode)\n` +
     `![Last Updated](https://img.shields.io/badge/Last__Update-${encodedDate}-brightgreen?style=flat-square)\n\n</div>\n`;
